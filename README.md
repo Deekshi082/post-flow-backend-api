@@ -30,25 +30,6 @@ This project demonstrates how to design scalable, secure, and production-ready b
 
 ---
 
-## 📁 Project Structure
-
-PostFlow/
-├── app/
-│ ├── main.py # Entry point
-│ ├── models/ # SQLAlchemy models
-│ ├── schemas/ # Pydantic schemas
-│ ├── routes/ # API routes
-│ ├── database.py # DB connection setup
-│ ├── auth/ # Authentication and JWT logic
-│ └── core/ # Config and utilities
-├── alembic/ # Database migrations
-├── requirements.txt
-├── .env.example
-└── README.md
-
-
----
-
 ## ⚙️ Installation & Setup
 
 1. **Clone the repository**
@@ -94,14 +75,7 @@ Swagger UI: http://127.0.0.1:8000/docs
 
 ReDoc: http://127.0.0.1:8000/redoc
 
-🧠 API Endpoints Overview
-Method	Endpoint	Description
-POST	/users/register	Register new user
-POST	/users/login	User login (JWT token)
-GET	/posts/	Get all posts
-POST	/posts/	Create a new post
-PUT	/posts/{id}	Update a post
-DELETE	/posts/{id}	Delete a post
+
 🧪 Example .env.example
 DATABASE_URL=postgresql://postgres:password@localhost:5432/postflow
 SECRET_KEY=mysecretkey
