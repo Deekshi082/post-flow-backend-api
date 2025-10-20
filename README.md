@@ -32,3 +32,83 @@ This project demonstrates how to design scalable, secure, and production-ready b
 
 ## 📁 Project Structure
 
+PostFlow/
+├── app/
+│ ├── main.py # Entry point
+│ ├── models/ # SQLAlchemy models
+│ ├── schemas/ # Pydantic schemas
+│ ├── routes/ # API routes
+│ ├── database.py # DB connection setup
+│ ├── auth/ # Authentication and JWT logic
+│ └── core/ # Config and utilities
+├── alembic/ # Database migrations
+├── requirements.txt
+├── .env.example
+└── README.md
+
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Deekshi082/PostFlow.git
+   cd PostFlow
+
+
+Create a virtual environment
+
+python -m venv venv
+source venv/bin/activate    # for macOS/Linux
+venv\Scripts\activate       # for Windows
+
+
+Install dependencies
+
+pip install -r requirements.txt
+
+
+Set up environment variables
+Create a .env file (refer .env.example) and add:
+
+DATABASE_URL=postgresql://username:password@localhost:5432/postflow_db
+SECRET_KEY=your_jwt_secret_key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+
+Run migrations
+
+alembic upgrade head
+
+
+Start the FastAPI server
+
+uvicorn app.main:app --reload
+
+
+Access API Docs
+
+Swagger UI: http://127.0.0.1:8000/docs
+
+ReDoc: http://127.0.0.1:8000/redoc
+
+🧠 API Endpoints Overview
+Method	Endpoint	Description
+POST	/users/register	Register new user
+POST	/users/login	User login (JWT token)
+GET	/posts/	Get all posts
+POST	/posts/	Create a new post
+PUT	/posts/{id}	Update a post
+DELETE	/posts/{id}	Delete a post
+🧪 Example .env.example
+DATABASE_URL=postgresql://postgres:password@localhost:5432/postflow
+SECRET_KEY=mysecretkey
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+
+👨‍💻 Author
+
+Deekshith S
